@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lazy Reversi</title>
+		<link rel="stylesheet" href="./index.css" />
+	</head>
+	<body>
+		<div id="setup">
+			<div id="minigrid">
+				<div class="square" data-player="2"></div>
+				<div class="square" data-player="1"></div>
+				<div class="square" data-player="1"></div>
+				<div class="square" data-player="2"></div>
+			</div>
+			<h1>Reversi</h1>
+			<div class="option">
+				<button class="btn" id="howto">How To Play</button>
+				<button class="btn" id="theme">Light Mode</button>
+			</div>
+			<div class="option">
+				<div class="label">Number of Players</div>
+				<select name="players" id="players">
+					<option value="1" selected>1</option>
+					<option value="2">2</option>
+				</select>
+			</div>
+			<div class="option" id="pid">
+				<div class="label">Disk Color</div>
+				<div class="suboption">
+					<div id="diskc">
+						<div id="setupdisk"></div>
+					</div>
+
+					<select name="playerId" id="playerId">
+						<option value="2" selected="1">Black</option>
+						<option value="1">White</option>
+					</select>
+				</div>
+			</div>
+			<button id="play" class="btn">Start!</button>
+			<div id="about"></div>
+		</div>
+		<div id="rules" class="modal">
+			<h1>How To Play</h1>
+			<p>Reversi is a simple strategy board game for two players, played on a 8x8 uncheckered board.</p>
+			<p>There are 64 disks, which are white on one side and black on the other. Players take turn placing the disks on board with their assigned color facing up. Black moves first.</p>
+			<p>A player must place his disks such that there exists at least one enemy's disk which is surrounded by your new disk and one of your older disk. The surrounded enemy's disks will now be reversed (or outflanked) and now belongs to you.</p>
+			<p>A valid move is one where at least one piece is reversed.</p>
+			<p>The game ends when neither player can play a valid move. The player with the most pieces on the board wins.</p>
+			<button id="closeModal">×</button>
+		</div>
+		<div id="victory" class="modal">
+			<div id="winner"></div>
+			<div id="victory-btns">
+				<button id="playAgain" class="btn">Play Again!</button>
+				<button id="back" class="btn">Back to Main Menu!</button>
+				<button id="cancel" class="btn">Cancel!</button>
+			</div>
+		</div>
+		<div id="backdrop"></div>
+		<div id="game">
+			<div id="state">
+				<div class="score">
+					<div id="blackdisk"></div>
+					<span id="scorep1">02</span>
+				</div>
+				<button id="stop">× Stop</button>
+				<div id="turn"></div>
+				<button id="undo">↺ Undo</button>
+				<div class="score">
+					<div id="whitedisk"></div>
+					<span id="scorep2">02</span>
+				</div>
+				<!-- ←↺⟲⤺ -->
+			</div>
+			<div id="grid"></div>
+		</div>
+		<script src="./index.js"></script>
+	</body>
+</html>
