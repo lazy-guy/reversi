@@ -50,7 +50,7 @@ function setTheme(dark = true) {
 	if (dark) {
 		themebtn.innerText = "Light Mode";
 		document.body.classList.remove("light");
-		localStorage.setItem("theme", "light");
+		localStorage.setItem("theme", "dark");
 	} else {
 		themebtn.innerText = "Dark Mode";
 		document.body.classList.add("light");
@@ -237,7 +237,7 @@ const logic = {
 		if (state.moves.length === 0) return;
 		let r;
 		if (state.cpu !== 0 && state.turn !== state.cpu) {
-			if (state.moves.length === 2) return;
+			if (state.moves.length < 2) return;
 			let length = state.moves.length;
 			while (state.moves[length - 1].turn === state.cpu && length > 1) {
 				state.moves.pop();
