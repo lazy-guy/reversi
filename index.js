@@ -22,6 +22,7 @@ if (localStorage.getItem("theme")) {
 }
 
 if (!darkmode) {
+	setTheme(false)
 }
 
 let squares = new Array(8);
@@ -53,7 +54,7 @@ function setTheme(dark = true) {
 	} else {
 		themebtn.innerText = "Dark Mode";
 		document.body.classList.add("light");
-		localStorage.setItem("theme", "dark");
+		localStorage.setItem("theme", "light");
 	}
 }
 
@@ -434,7 +435,7 @@ const logic = {
 				}
 			}
 			this.inputHandler(Math.floor(move / 10), move % 10);
-		}, 700);
+		}, 1500);
 	},
 };
 

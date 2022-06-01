@@ -1,5 +1,6 @@
 const cacheName = "lazy-reversi";
 const contentToCache = [
+	"./",
 	"./index.html",
 	"./index.css",
 	"./index.js",
@@ -23,7 +24,13 @@ self.addEventListener("install", (e) => {
 });
 
 self.addEventListener("fetch", function (event) {
-	event.respondWith(fetch(event.request).catch(() => {
+	event.respondWith(fetch(event.request).then((res) => {
+		let response = res.clone();
+        caches.open(cacheName).then((cache) => {
+          cache.put(event.request, response);
+        });
+		return res
+	}).catch((err) => {
 		return caches.match(event.request)
 	})
 	);
