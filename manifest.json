@@ -1,7 +1,7 @@
 {
 	"name": "Reversi",
 	"short_name": "Reversi",
-	"start_url": "./",
+	"start_url": "./index.html",
 	"display": "standalone",
 	"background_color": "#333333",
 	"theme_color": "#008000",
