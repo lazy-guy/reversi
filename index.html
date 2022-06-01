@@ -4,7 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Lazy Reversi</title>
+		<link rel="manifest" href="manifest.json">
+		<meta name="keywords" content="reversi">
+		<meta name="description" content="A simple reversi game written in JavaScript">
+		<meta name="theme-color" content="#008000">
+		<link rel="shortcut icon" href="./icon.png" type="image/png">
+		<title>Reversi</title>
 		<link rel="stylesheet" href="./index.css" />
 	</head>
 	<body>
@@ -17,7 +22,7 @@
 			</div>
 			<h1>Reversi</h1>
 			<div class="option">
-				<button class="btn" id="howto">How To Play</button>
+				<button class="btn" id="howto">About</button>
 				<button class="btn" id="theme">Light Mode</button>
 			</div>
 			<div class="option">
@@ -44,6 +49,12 @@
 			<div id="about"></div>
 		</div>
 		<div id="rules" class="modal">
+			<h1>Reversi</h1>
+			<p>A simple reversi game written in vanilla JS.</p>
+			<a id="github" href="https://github.com/lazy-guy/reversi" target="_blank">
+				<img src="./GitHub-Mark-64px.png" alt="GitHub">
+				View on GitHub
+			</a>
 			<h1>How To Play</h1>
 			<p>Reversi is a simple strategy board game for two players, played on a 8x8 uncheckered board.</p>
 			<p>There are 64 disks, which are white on one side and black on the other. Players take turn placing the disks on board with their assigned color facing up. Black moves first.</p>

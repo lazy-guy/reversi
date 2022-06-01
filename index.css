@@ -22,12 +22,16 @@ body {
 body.light {
 	background-color: #fff;
 	color: #000;
-	color-scheme: initial;
+	color-scheme: light;
 }
 
 #setup,
 #game {
 	display: none;
+}
+
+button {
+	-webkit-tap-highlight-color: transparent;
 }
 
 .setup-active #setup {
@@ -116,7 +120,26 @@ h1 {
 
 #rules p {
 	font-size: 1.4em;
-	margin-bottom: 4px;
+	margin-bottom: 8px;
+}
+
+#github {
+	padding: 5px 10px;
+	margin: 5px 5px 10px 5px;
+	text-decoration: none;
+	background-color: #ddd;
+	color: #000;
+	font-size: 1.2rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+}
+
+#github img {
+	width: 1.2rem;
+	height: 1.2rem;
+	margin: 0 5px;
 }
 
 #closeModal {
@@ -276,6 +299,7 @@ h1 {
 	font-size: 1.5em;
 	margin: 0 5px;
 	border: none;
+	cursor: pointer;
 }
 
 #minigrid {
@@ -348,11 +372,11 @@ h1 {
 		height: 60vw;
 	}
 	.game-active #grid {
-		width: 90vmin;
-		height: 90vmin;
+		width: 95vmin;
+		height: 95vmin;
 	}
 	.game-active #grid::after {
-		box-shadow: 0 45vmin 0 0 #000, 45vmin 45vmin 0 0 #000, 45vmin 0 0 0 #000;
+		box-shadow: 0 47.5vmin 0 0 #000, 47.5vmin 47.5vmin 0 0 #000, 47.5vmin 0 0 0 #000;
 	}
 	#state {
 		font-size: 3vw;
@@ -360,6 +384,13 @@ h1 {
 }
 
 @media screen and (min-aspect-ratio: 14/9) {
+	.game-active #grid {
+		width: 95vmin;
+		height: 95vmin;
+	}
+	.game-active #grid::after {
+		box-shadow: 0 47.5vmin 0 0 #000, 47.5vmin 47.5vmin 0 0 #000, 47.5vmin 0 0 0 #000;
+	}
 	.game-active #game {
 		display: flex;
 		flex-direction: row;

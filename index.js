@@ -1,3 +1,7 @@
+if ("serviceWorker" in navigator) {
+	navigator.serviceWorker.register("./sw.js");
+}
+
 let grid = document.getElementById("grid");
 let turnDiv = document.getElementById("turn");
 let scorep1 = document.getElementById("scorep1");
@@ -7,18 +11,17 @@ let playerId = document.getElementById("playerId");
 let victory = document.getElementById("victory");
 let winner = document.getElementById("winner");
 let backdrop = document.getElementById("backdrop");
-let rules = document.getElementById("rules")
-let themebtn = document.getElementById("theme")
+let rules = document.getElementById("rules");
+let themebtn = document.getElementById("theme");
 backdrop.style.display = "none";
 
 let darkmode = true;
 
-if(localStorage.getItem("theme")) {
+if (localStorage.getItem("theme")) {
 	darkmode = localStorage.getItem("theme") === "dark" ? true : false;
 }
 
 if (!darkmode) {
-	
 }
 
 let squares = new Array(8);
@@ -42,15 +45,15 @@ let state = {
 	cpu: 0,
 };
 
-function setTheme(dark= true) {
+function setTheme(dark = true) {
 	if (dark) {
-		themebtn.innerText = "Light Mode"
-		document.body.classList.remove("light")
-		localStorage.setItem("theme", "light")
+		themebtn.innerText = "Light Mode";
+		document.body.classList.remove("light");
+		localStorage.setItem("theme", "light");
 	} else {
-		themebtn.innerText = "Dark Mode"
-		document.body.classList.add("light")
-		localStorage.setItem("theme", "dark")
+		themebtn.innerText = "Dark Mode";
+		document.body.classList.add("light");
+		localStorage.setItem("theme", "dark");
 	}
 }
 
@@ -121,15 +124,15 @@ function initGrid() {
 		hideModal(victory);
 	});
 	document.getElementById("howto").addEventListener("click", () => {
-		showModal(rules)
-	})
+		showModal(rules);
+	});
 	document.getElementById("closeModal").addEventListener("click", () => {
-		hideModal(rules)
-	})
+		hideModal(rules);
+	});
 	document.getElementById("theme").addEventListener("click", () => {
-		darkmode = !darkmode
+		darkmode = !darkmode;
 		setTheme(darkmode);
-	})
+	});
 }
 
 function showModal(el) {
@@ -235,7 +238,7 @@ const logic = {
 		if (state.cpu !== 0 && state.turn !== state.cpu) {
 			if (state.moves.length === 2) return;
 			let length = state.moves.length;
-			while(state.moves[length - 1].turn === state.cpu && length > 1) {
+			while (state.moves[length - 1].turn === state.cpu && length > 1) {
 				state.moves.pop();
 				length--;
 			}
