@@ -9,7 +9,7 @@ body {
 	width: 100%;
 	height: 100vh;
 	font-family: monospace;
-	background-color: #333;
+	background-color: #000;
 	color: white;
 	color-scheme: dark;
 	transition: opacity 450ms;
@@ -87,7 +87,7 @@ h1 {
 
 .modal {
 	display: flex;
-	background-color: #444;
+	background-color: #353535;
 	color: #ffffff;
 	width: 90vw;
 	max-height: 90vh;
@@ -240,12 +240,12 @@ h1 {
 }
 
 #state {
-	width: 95vmin;
+	width: 100vmin;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-evenly;
 	font-size: calc(10px + 1vmin);
 }
 
@@ -257,8 +257,8 @@ h1 {
 	justify-content: center;
 	flex-grow: 0;
 	flex-shrink: 0;
-	padding: 10px;
-	border-radius: 15px;
+	padding: 4px;
+	border-radius: 100px;
 	background-color: #008000;
 	color: #fff;
 }
@@ -266,14 +266,14 @@ h1 {
 #scorep1,
 #scorep2 {
 	font-family: monospace;
-	padding-left: 5px;
-	font-size: 2em;
+	padding: 0 5px;
+	font-size: 1em;
 }
 
 #blackdisk,
 #whitedisk {
-	width: 6vmin;
-	height: 6vmin;
+	width: 3vmin;
+	height: 3vmin;
 	border-radius: 50%;
 	background-color: black;
 }
@@ -284,20 +284,17 @@ h1 {
 
 #turn {
 	font-size: 1.5em;
-	flex-grow: 1;
-	flex-shrink: 1;
 	text-align: center;
 	font-family: monospace;
 }
 
 #undo,
 #stop {
-	padding: 5px;
-	background-color: #444444;
+	padding: 4px 8px;
+	background-color: #353535;
 	color: white;
 	border-radius: 8px;
-	font-size: 1.5em;
-	margin: 0 5px;
+	font-size: 1em;
 	border: none;
 	cursor: pointer;
 	box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.7);
@@ -387,36 +384,6 @@ h1 {
 	}
 	#state {
 		font-size: 3vw;
-	}
-}
-
-@media screen and (min-aspect-ratio: 14/9) {
-	.game-active #grid {
-		width: 95vmin;
-		height: 95vmin;
-	}
-	.game-active #grid::after {
-		box-shadow: 0 47.5vmin 0 0 #000, 47.5vmin 47.5vmin 0 0 #000, 47.5vmin 0 0 0 #000;
-	}
-	.game-active #game {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: nowrap;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
-	}
-	#state {
-		flex-direction: column;
-		width: auto;
-		height: 95vh;
-		align-items: center;
-		justify-content: space-evenly;
-		padding: 0 10px;
-	}
-	#turn {
-		flex-grow: 0;
 	}
 }
 
